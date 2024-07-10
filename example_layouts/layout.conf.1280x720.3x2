@@ -1,0 +1,63 @@
+# This is the camera feed/windows layout configuration file for the
+# displaycameras service.  It ONLY configures the layout and feeds for
+# the cameras; the rest of the configuration is in displaycameras.conf.
+# See the comments in that file for notes on configuring the below.
+
+# Window names
+
+# 3x2 640x240 on-screen and 6 off-screen windows
+windows=(top_left top_center top_right bottom_left bottom_center bottom_right)
+# Make sure to account for each window above in the list below.
+
+# Windows positions
+
+window_positions=(
+#Top Row
+#upper_left
+# 640x240
+"33 18 426 359 " \
+#upper_middle
+"426 18 850 359" \
+#upper_right
+"850 18 1248 359" \
+
+#Bottom Row
+#bottom_left
+# 426x240
+"33 359 426 705" \
+#bottom_center
+"426 359 851 705" \
+#bottom_right
+"851 359 1250 705" \
+)
+
+# Camera Names
+
+camera_names=(Entry Front Driveway Side Backyard Back)
+#camera_names=(NE SE South SW West Vestibule NE2 SE2 South2 SW2 West2 Vest2)
+# Make sure to account for each camera above in the list of feeds below.
+
+# Camera Feeds
+# If using Unifi Protect change URL as shown
+# Uniti URL: 			rtsps://192.168.1.100:7441/YYZtAVjcLfnpqeR3?enableSrtp
+# displaycamers URL: 	rtsp://192.168.1.100:7447/YYZtAVjcLfnpqeR3
+
+
+camera_feeds=( \
+# Low-Res
+#Entry
+"<Camera stream URL>" \
+#Front
+"<Camera stream URL>" \
+#Driveway
+"<Camera stream URL>" \
+#Side
+"<Camera stream URL>" \
+#Backyard
+"<Camera stream URL>" \
+#Back
+"<Camera stream URL>" \
+)
+
+# Are we rotating cameras through the window matrix? (default false if not set here)
+rotate="false"
